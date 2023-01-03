@@ -64,11 +64,11 @@ def read_file(path_to_file):
 
 def analyze_log(path_to_file):
     orders = read_file(path_to_file)
-    is_maria = ordered_by_client(orders, 'maria')
-    is_arnaldo = consumed(orders, 'arnaldo', 'hamburguer')
-    is_joao = food_not_consumed(orders, 'joao')
-    is_non_client = non_clients(orders, 'joao')
+    maria = ordered_by_client(orders, 'maria')
+    arnaldo = consumed(orders, 'arnaldo', 'hamburguer')
+    joao = food_not_consumed(orders, 'joao')
+    non_client = non_clients(orders, 'joao')
     file = open("./data/mkt_campaign.txt", mode="w")
-    lines = [f"{is_maria}\n", f"{is_arnaldo}\n", f"{is_joao}\n", f"{is_non_client}\n"]
+    lines = [f"{maria}\n", f"{arnaldo}\n", f"{joao}\n", f"{non_client}\n"]
     file.writelines(lines)
     file.close()
